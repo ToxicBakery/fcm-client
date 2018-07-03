@@ -12,7 +12,7 @@ class GoogleServiceAccountResolver(
             .createScoped(listOf("https://www.googleapis.com/auth/firebase.messaging"))
 
     override fun getOrRefresh(): String {
-        if (googleCredential.expiresInSeconds < 60) {
+        if (googleCredential.expiresInSeconds ?: 0 < 60) {
             googleCredential.refreshToken
         }
         return googleCredential.accessToken
