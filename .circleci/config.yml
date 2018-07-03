@@ -25,6 +25,7 @@ jobs:
             else
               ./gradlew build --no-daemon
             fi
+            bash <(curl -s https://codecov.io/bash)
 workflows:
   version: 2
   build:
