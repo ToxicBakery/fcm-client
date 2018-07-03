@@ -19,4 +19,7 @@ class GoogleServiceAccountResolver(
         return googleCredential.accessToken
     }
 
+    override fun getProjectId(): String =
+            googleCredential.serviceAccountProjectId
+
 }

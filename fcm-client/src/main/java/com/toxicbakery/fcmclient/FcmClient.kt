@@ -1,9 +1,9 @@
 package com.toxicbakery.fcmclient
 
-class FcmClient(
-        private val accessTokenResolver: AccessTokenResolver
-) {
+import com.toxicbakery.fcmclient.model.Message
 
+interface FcmClient {
 
+    fun send(message: Message)
 
 }
