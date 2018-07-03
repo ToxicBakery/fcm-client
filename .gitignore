@@ -1,0 +1,7 @@
+/.idea
+/.gradle
+/build
+/*/build
+/out
+/*/out
+maven.keystore

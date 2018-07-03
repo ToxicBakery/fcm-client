@@ -1,0 +1,28 @@
+buildscript {
+    ext.kotlin_version = '1.2.41'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.9.16"
+    }
+}
+
+allprojects {
+    String tagName = System.getenv('CIRCLE_TAG')
+    boolean isTag = tagName != null && !tagName.isEmpty()
+    String buildNumber = System.getenv('CIRCLE_BUILD_NUM') ?: "0"
+
+    group 'com.ToxicBakery.fcmclient'
+    version "1.0.${buildNumber}" + (isTag ? "" : "-SNAPSHOT")
+
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+}
