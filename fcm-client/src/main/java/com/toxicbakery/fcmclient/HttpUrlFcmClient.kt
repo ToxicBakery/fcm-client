@@ -1,6 +1,7 @@
 package com.toxicbakery.fcmclient
 
 import com.toxicbakery.fcmclient.model.Message
+import com.toxicbakery.fcmclient.model.MessageWrapper
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -21,7 +22,7 @@ class HttpUrlFcmClient(
                 .apply { doOutput = true }
                 .let { connection ->
                     connection.outputStream.use { stream ->
-                        jsonMapper.writeJson(message, stream)
+                        jsonMapper.writeJson(MessageWrapper(message), stream)
                     }
 
                     when (connection.responseCode) {
