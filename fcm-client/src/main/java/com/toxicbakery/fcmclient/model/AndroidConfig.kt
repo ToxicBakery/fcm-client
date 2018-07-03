@@ -1,11 +1,13 @@
 package com.toxicbakery.fcmclient.model
 
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
  * Android specific options for messages sent through
  * [FCM connection server](https://firebase.google.com/docs/cloud-messaging/server).
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 data class AndroidConfig(
 
         /**

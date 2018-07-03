@@ -1,5 +1,8 @@
 package com.toxicbakery.fcmclient.model
 
+import com.fasterxml.jackson.annotation.JsonInclude
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 data class Message(
 
         /**
@@ -26,7 +29,7 @@ data class Message(
         /**
          * Input only. [Webpush protocol](https://tools.ietf.org/html/rfc8030) options.
          */
-        val webPush: WebPushConfig? = null,
+        val webpush: WebPushConfig? = null,
 
         /**
          * Input only. [Apple Push Notification Service](https://goo.gl/MXRTPa) specific options.

@@ -1,11 +1,13 @@
 package com.toxicbakery.fcmclient.model
 
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
  * Notification to send to android devices.
  * @see [AndroidNotification](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#AndroidNotification)
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 data class AndroidNotification(
 
         /**
